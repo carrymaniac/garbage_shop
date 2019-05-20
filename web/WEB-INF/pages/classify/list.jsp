@@ -145,7 +145,7 @@
                             </c:if>
                             <c:if test="${pageResult.currentPage >1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath }/user?method=list&currentPage=${pageResult.currentPage-1}" aria-label="Previous">
+                                    <a href="${pageContext.request.contextPath }/classify?method=list&currentPage=${pageResult.currentPage-1}" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
@@ -156,7 +156,7 @@
                                     <li><span style="color: black;">${status.index }</span></li>
                                 </c:if>
                                 <c:if test="${status.index ne pageResult.currentPage}">
-                                    <li><a href="${pageContext.request.contextPath }/user?method=list&currentPage=${status.index}">${status.index }</a></li>
+                                    <li><a href="${pageContext.request.contextPath }/classify?method=list&currentPage=${status.index}">${status.index }</a></li>
                                 </c:if>
                             </c:forEach>
 
@@ -168,7 +168,7 @@
                             </c:if>
                             <c:if test="${pageResult.currentPage < pageResult.totalPages}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath }/user?method=list&currentPage=${pageResult.currentPage+1}" aria-label="Next">
+                                    <a href="${pageContext.request.contextPath }/classify?method=list&currentPage=${pageResult.currentPage+1}" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>

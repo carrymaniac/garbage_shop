@@ -90,10 +90,10 @@ public class GoodServlet extends HttpServlet {
         Boolean result = goodService.delete(idStr);
         if(result){
             request.setAttribute("msg", ResultEnum.DELETE_SUCCESS.getMsg());
-            request.getRequestDispatcher("/WEB-INF/pages/good/list.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath()+"/good?method=list").forward(request, response);
         }else {
             request.setAttribute("msg", ResultEnum.DELETE_FAIL.getMsg());
-            request.getRequestDispatcher("/WEB-INF/pages/good/list.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath()+"/good?method=list").forward(request, response);
         }
 
     }
@@ -137,7 +137,7 @@ public class GoodServlet extends HttpServlet {
         GoodService goodService = new GoodServiceImpl();
         goodService.add(good);
         request.setAttribute("msg", ResultEnum.ADD_SUCCESS.getMsg());
-        request.getRequestDispatcher("/WEB-INF/pages/good/list.jsp").forward(request, response);
+        request.getRequestDispatcher(request.getContextPath()+"/good?method=list").forward(request, response);
     }
     //todo 修改所有的项目跳转
     /**
@@ -155,10 +155,10 @@ public class GoodServlet extends HttpServlet {
         Boolean update = goodService.update(good);
         if(update) {
             request.setAttribute("msg", ResultEnum.UPDATE_SUCCESS.getMsg());
-            request.getRequestDispatcher("/WEB-INF/pages/good/list.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath()+"/good?method=list").forward(request, response);
         }else {
             request.setAttribute("msg", ResultEnum.UPDATE_FAIL.getMsg());
-            request.getRequestDispatcher("/WEB-INF/pages/good/list.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath()+"/good?method=list").forward(request, response);
         }
     }
 
